@@ -1,5 +1,6 @@
 const express= require('express');
 const app= express();
+const cors=require('cors')
 const ConnectDB=require('./DB_Config/Connection');
 ConnectDB();
 const category=require('./Routers/CategoryRoute')
@@ -13,7 +14,7 @@ const cat_exp=require('./Routers/catexpresroute')
 // const authent=require('./AUthentications/middleware');
 app.use(express.json());
 //midleware
-
+app.use(cors);
 //
 app.use('/category',category)
 app.use('/store',med);

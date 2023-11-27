@@ -11,10 +11,12 @@ const login=require('./Routers/loginrouter');
 const report=require('./Routers/reportrouter')
 const expense=require('./Routers/expresrouter');
 const cat_exp=require('./Routers/catexpresroute')
+
+app.use(cors);
 // const authent=require('./AUthentications/middleware');
 app.use(express.json());
 //midleware
-app.use(cors);
+
 //
 app.use('/category',category)
 app.use('/store',med);

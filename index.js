@@ -3,6 +3,8 @@ const app= express();
 const cors=require('cors')
 const ConnectDB=require('./DB_Config/Connection');
 ConnectDB();
+app.use(cors());
+
 const category=require('./Routers/CategoryRoute')
 const med=require('./Routers/medicinerouter')
 const seles=require('./Routers/selesrouter')
@@ -12,7 +14,7 @@ const report=require('./Routers/reportrouter')
 const expense=require('./Routers/expresrouter');
 const cat_exp=require('./Routers/catexpresroute')
 
-app.use(cors);
+
 // const authent=require('./AUthentications/middleware');
 app.use(express.json());
 //midleware
